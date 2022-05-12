@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const useCounter = () => {
-  const [count, setCount] = React.useState(0)
-  const increment = () => setCount(c => c + 2)
-  const decrement = () => setCount(c => c - 1)
+export const useCounter = ({initialCount = 0, step = 1} = {}) => {
+  const [count, setCount] = React.useState(initialCount)
+  const increment = () => setCount(c => c + step)
+  const decrement = () => setCount(c => c - step)
 
   return {count, increment, decrement}
 }
