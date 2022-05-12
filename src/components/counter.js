@@ -1,11 +1,11 @@
 // http://localhost:3000/counter
 
 import * as React from 'react'
+import {useCounter} from '../hooks/useCounter'
 
 function Counter() {
-  const [count, setCount] = React.useState(0)
-  const increment = () => setCount(c => c + 1)
-  const decrement = () => setCount(c => c - 1)
+  const {count, increment, decrement} = useCounter()
+
   return (
     <div>
       <div>Current count: {count}</div>
